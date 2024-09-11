@@ -5,6 +5,7 @@
 package objektumok;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JButton;
 
 /**
@@ -13,14 +14,19 @@ import javax.swing.JButton;
  */
 public class LadaGomb extends JButton {
     byte ladaszam;
-    int szin;
     String kepcsukva, kepnyitva;
+    boolean nyitva;
     
-    public LadaGomb(byte ladaszam, String kepcsukva, String kepnyitva, int szin){
-       // A konstruktor minden adattagnak értéket ad.
+    public LadaGomb(byte ladaszam, Color szin, String kepcsukva, String kepnyitva){
+        this.ladaszam = ladaszam;
+        this.setBackground(szin);
+        this.kepnyitva = kepnyitva;
+        this.kepcsukva = kepcsukva;
+        
+        this.setSize(new Dimension(75, 75));
     }
     
-    public void kinyit(){
-        // Képátállítás
+    public void kinyit(boolean vanbenne){
+        this.setText(vanbenne ? "Itt a kincs!" : "Nincs itt a kincs.");
     }
 }

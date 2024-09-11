@@ -4,14 +4,16 @@
  */
 package program;
 
+import java.awt.Color;
 import javax.swing.JButton;
-
+import objektumok.LadaGomb;
 /**
  *
  * @author SzabóRoland(SZF_2023
  */
 public class MainGUI extends javax.swing.JFrame {
-    JButton[] gombok;
+    LadaGomb[] ladak;
+    Kincseslada k;
     
     
     /**
@@ -19,7 +21,24 @@ public class MainGUI extends javax.swing.JFrame {
      */
     public MainGUI() {
         initComponents();
-        // gombok legenerálása
+        k = new Kincseslada();
+        gombs();
+    }
+    
+    public void gombs(){
+        String[] feliratok = k.getFeliratok();
+        Kincseslada.Szinek[] szinek = k.getSzinek();
+        ladak = new LadaGomb[feliratok.length];
+        
+        for (int i = 0; i < feliratok.length; i++) {
+            ladak[i] = new LadaGomb((byte)(i+1), k.getSzinek(szinek[i]), "", "");
+        }
+        
+        Pn_ladak.removeAll();
+        for (int i = 0; i < ladak.length; i++) {
+            Pn_ladak.add(ladak[i]);
+        }
+        Pn_ladak.updateUI();
     }
 
     /**
