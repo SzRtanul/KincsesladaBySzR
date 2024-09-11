@@ -4,17 +4,22 @@
  */
 package program;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author SzabóRoland(SZF_2023
  */
 public class MainGUI extends javax.swing.JFrame {
-
+    JButton[] gombok;
+    
+    
     /**
      * Creates new form MainGUI
      */
     public MainGUI() {
         initComponents();
+        // gombok legenerálása
     }
 
     /**
