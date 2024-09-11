@@ -4,6 +4,7 @@
  */
 package program;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JButton;
 import objektumok.LadaGomb;
@@ -25,20 +26,22 @@ public class MainGUI extends javax.swing.JFrame {
         gombs();
     }
     
-    public void gombs(){
+    public final void gombs(){
         String[] feliratok = k.getFeliratok();
         Kincseslada.Szinek[] szinek = k.getSzinek();
         ladak = new LadaGomb[feliratok.length];
         
         for (int i = 0; i < feliratok.length; i++) {
-            ladak[i] = new LadaGomb((byte)(i+1), k.getSzinek(szinek[i]), "", "");
+            ladak[i] = new LadaGomb((byte)(i+1), k.getSzinek(szinek[i]), (i*152)+32, 36, "", "");
         }
         
-        Pn_ladak.removeAll();
+        //Pn_ladak.removeAll();
+        
+       // Pn_ladak.setLayout(new BorderLayout());
         for (int i = 0; i < ladak.length; i++) {
             Pn_ladak.add(ladak[i]);
         }
-        Pn_ladak.updateUI();
+        Pn_ladak.repaint();
     }
 
     /**
@@ -51,30 +54,21 @@ public class MainGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         Pn_ladak = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Pn_ladak.setBackground(new java.awt.Color(51, 255, 51));
 
-        jButton1.setText("Példa láda");
-
         javax.swing.GroupLayout Pn_ladakLayout = new javax.swing.GroupLayout(Pn_ladak);
         Pn_ladak.setLayout(Pn_ladakLayout);
         Pn_ladakLayout.setHorizontalGroup(
             Pn_ladakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pn_ladakLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+            .addGap(0, 444, Short.MAX_VALUE)
         );
         Pn_ladakLayout.setVerticalGroup(
             Pn_ladakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pn_ladakLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 145, Short.MAX_VALUE)
         );
 
         jLabel1.setText("Nem ez a láda rejti a kincset./Gratulálok, megtaláltad a kincset.");
@@ -88,7 +82,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
+                .addGap(104, 104, 104)
                 .addComponent(Pn_ladak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96))
         );
@@ -97,7 +91,7 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addGap(120, 120, 120)
                 .addComponent(Pn_ladak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
@@ -142,7 +136,6 @@ public class MainGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Pn_ladak;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
