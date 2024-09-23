@@ -38,7 +38,9 @@ public class Kincseslada {
     }
     
     public boolean kitalal(byte lada){
-        return lada == melyiklada;
+        boolean both = lada == melyiklada;
+        kitalalva = kitalalva || lada == melyiklada;
+        return both;
     }
     
     public boolean getKitalalva(){
