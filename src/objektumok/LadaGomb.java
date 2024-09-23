@@ -47,7 +47,7 @@ public class LadaGomb extends JButton {
     }
     
     public void kinyit(boolean vanbenne){
-       // this.setText(vanbenne ? "Itt a kincs!" : "Nincs itt a kincs.");
+        this.setText(vanbenne ? "1" : "0");
         URL nyitvaures = LadaGomb.class.getClassLoader().getResource("kepek/nyitvaures.jpg");
         URL nyitva = LadaGomb.class.getClassLoader().getResource("kepek/nyitva.jpg");
         Image resized = getScaledImage(new ImageIcon(vanbenne ? nyitva : nyitvaures).getImage(), this.getWidth() - 5, this.getHeight() - 10);
