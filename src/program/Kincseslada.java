@@ -38,7 +38,9 @@ public class Kincseslada {
     }
     
     public boolean kitalal(byte lada){
-        return lada == melyiklada;
+        boolean both = lada == melyiklada;
+        kitalalva = kitalalva || lada == melyiklada;
+        return both;
     }
     
     public boolean getKitalalva(){
@@ -53,10 +55,13 @@ public class Kincseslada {
         Color gombszin = new Color(0, 0, 0);
         switch (szin) {
             case ARANY:
+                gombszin = new Color(209, 186, 60);
                 break;
             case EZUST:
+                gombszin = new Color(193, 181, 161);
                 break;
             case BRONZ:
+                gombszin = new Color(196, 142, 42);
                 break;
         }
         return gombszin;

@@ -6,6 +6,8 @@ package program;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import objektumok.LadaGomb;
 /**
@@ -23,7 +25,12 @@ public class MainGUI extends javax.swing.JFrame {
     public MainGUI() {
         initComponents();
         k = new Kincseslada();
+        initform();
         gombs();
+    }
+    
+    public final void initform(){
+        La_visszajelez.setText("");
     }
     
     public final void gombs(){
@@ -39,6 +46,17 @@ public class MainGUI extends javax.swing.JFrame {
         
        // Pn_ladak.setLayout(new BorderLayout());
         for (int i = 0; i < ladak.length; i++) {
+            LadaGomb lada = ladak[i];
+            ladak[i].addActionListener(new ActionListener() {  
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if(!k.getKitalalva()){
+                        boolean ezaz = k.kitalal(lada.getLadaszam());
+                        lada.kinyit(ezaz);
+                        La_visszajelez.setText(ezaz ? "Gratulálok! Megtaláltad a kincset." : "Nem ebben a ládában van a kincs.");
+                    }
+                }
+            });
             Pn_ladak.add(ladak[i]);
         }
         Pn_ladak.repaint();
@@ -54,7 +72,7 @@ public class MainGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         Pn_ladak = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        La_visszajelez = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,7 +89,7 @@ public class MainGUI extends javax.swing.JFrame {
             .addGap(0, 145, Short.MAX_VALUE)
         );
 
-        jLabel1.setText("Nem ez a láda rejti a kincset./Gratulálok, megtaláltad a kincset.");
+        La_visszajelez.setText("Nem ez a láda rejti a kincset./Gratulálok, megtaláltad a kincset.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,7 +97,7 @@ public class MainGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(151, 151, 151)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(La_visszajelez, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(104, 104, 104)
@@ -90,7 +108,7 @@ public class MainGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(La_visszajelez, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120)
                 .addComponent(Pn_ladak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
@@ -135,7 +153,7 @@ public class MainGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel La_visszajelez;
     private javax.swing.JPanel Pn_ladak;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

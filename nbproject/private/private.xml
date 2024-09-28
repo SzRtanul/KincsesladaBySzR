@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/kepek/nyitvaures.jpg</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/kepek/nyitva.jpeg</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/kepek/csukva.jpeg</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/program/Kincseslada.java</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/objektumok/LadaGomb.java</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/kepek/nyitva.jpg</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/kepek/Csepel_szerszamos_lada_uresen_814632514575994.jpg</file>
+            <file>file:/C:/Users/szabo.roland/Documents/KincsesladaBySzR/src/program/MainGUI.java</file>
+        </group>
+>>>>>>> 636d941152fbdd4d26d9eb6197d8ed29f21d5718
     </open-files>
 </project-private>

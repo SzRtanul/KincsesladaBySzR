@@ -1,0 +1,9 @@
+Három féle ember:
+Igazmondó, hazudó, változó(egyszer igaz, egyszer hazudik);
+Tűzoltósághoz hívás -> Ég a ház! -> Melyik csoport? -> Változó
+
+Igazság tábla:
+1 1 - 0
+0 1 - 1
+1 0 - 0
+0 0 - 1
