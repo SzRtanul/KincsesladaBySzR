@@ -73,6 +73,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         Pn_ladak = new javax.swing.JPanel();
         La_visszajelez = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,27 +92,36 @@ public class MainGUI extends javax.swing.JFrame {
 
         La_visszajelez.setText("Nem ez a láda rejti a kincset./Gratulálok, megtaláltad a kincset.");
 
+        jLabel1.setText("<html>\n<head>\n<style>\n*{\ndisplay: block;\nmargin: 0px;\npadding: 0px;\n}\nbody{\n/*background-color: brown;\ncolor:  green;*/\n}\n.tabb{\npadding: 0px;\nmargin: 0px;\nmargin-left: 20px;\n}\n</style>\n</head>\n<body>\n<p>Van három láda: Arany, Ezüst, Bronz.</p>\n<p class='tabb'>\n<br>A ládákon van egy-egy állítás, ezek közül csak az egyik igaz.\n<br>Arany: Én rejtem a kincset.\n<br>Ezüst: Nem én rejtem a kincset. \n<br>Bronz: Az arany láda hazudik.\n</p>\n</body>\n</html>");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel1.setOpaque(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(La_visszajelez, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(Pn_ladak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1)
+                            .addComponent(Pn_ladak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(La_visszajelez, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(La_visszajelez, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Pn_ladak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(3, 3, 3)
+                .addComponent(La_visszajelez)
+                .addContainerGap())
         );
 
         pack();
@@ -155,5 +165,6 @@ public class MainGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel La_visszajelez;
     private javax.swing.JPanel Pn_ladak;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
